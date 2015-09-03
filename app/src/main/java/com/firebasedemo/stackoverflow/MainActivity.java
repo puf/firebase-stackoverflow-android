@@ -1,16 +1,60 @@
 package com.firebasedemo.stackoverflow;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private final static String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final List<ActivityInfo> activityInfos = new ArrayList<>();
+        List<String> activityNames = new ArrayList<>();
+
+        try {
+            ActivityInfo[] activities = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_ACTIVITIES).activities;
+            for (ActivityInfo activityInfo: activities) {
+                if (!activityInfo.name.equals(this.getClass().getName())) {
+                    activityInfos.add(activityInfo);
+                    activityNames.add(activityInfo.loadLabel(getPackageManager()).toString());
+                }
+            }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, activityNames);
+            ListView list = (ListView) findViewById(R.id.activities_list);
+            list.setAdapter(adapter);
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    ActivityInfo activity = activityInfos.get(position);
+                    try {
+                        Class clazz = Class.forName(activity.name);
+                        Intent intent = new Intent(MainActivity.this, clazz);
+                        startActivity(intent);
+                    } catch (ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
