@@ -1,0 +1,13 @@
+# Mac OS-X
+.DS_STORE
+
+# idea
+.idea
+*.iml
+*.ipr
+*.iws
+
+.gradle
+/local.properties
+/build
+/captures
