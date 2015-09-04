@@ -16,7 +16,7 @@ import java.util.UUID;
  * This class is a minimal test case for the question on:
  *
  * http://stackoverflow.com/questions/32319324/android-app-not-able-to-post-data-on-firebase
- * 
+ *
  */
 public class Activity32319324 extends AppCompatActivity {
 
