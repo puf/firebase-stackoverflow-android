@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
             for (ActivityInfo activityInfo: activities) {
                 if (!activityInfo.name.equals(this.getClass().getName())) {
                     activityInfos.add(activityInfo);
-                    activityNames.add(activityInfo.loadLabel(getPackageManager()).toString());
+                    // Use the class name, since the label may not be set for empty activities
+                    String name = activityInfo.name.substring(activityInfo.packageName.length()+1);
+                    activityNames.add(name);
                 }
             }
 
