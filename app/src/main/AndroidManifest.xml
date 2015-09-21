@@ -30,6 +30,9 @@
             android:name=".Activity32469846"
             android:label="@string/title_activity_32469846" >
         </activity>
+        <activity android:name=".Activity32699300"
+            android:label="@string/title_activity_32699300">
+        </activity>
     </application>
 
 </manifest>
