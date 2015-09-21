@@ -26,10 +26,12 @@ public class Activity32699300 extends AppCompatActivity {
 
         Firebase.setAndroidContext(this);
         Firebase ref = new Firebase("https://stackoverflow.firebaseio.com/32699300/");
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        Firebase phoneRef = ref.child("+31612345678");
+        phoneRef.setValue("Hello");
+        phoneRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-               output.setText(dataSnapshot.getValue().toString());
+                output.setText(dataSnapshot.getKey()+": "+dataSnapshot.getValue());
             }
 
             @Override
