@@ -21,7 +21,8 @@ import java.util.Map;
  *
  * http://stackoverflow.com/questions/34559171/coupling-firebaserecyclerviewadapter-to-a-boolean-string-map-entry
  *
- */public class Activity34559171 extends AppCompatActivity {
+ */
+public class Activity34559171 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
