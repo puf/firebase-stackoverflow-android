@@ -36,7 +36,8 @@
         <activity android:name=".Activity33294232" />
         <activity android:name=".Activity33955548" />
         <activity android:name=".Activity34559171" />
-        <activity android:name=".Activity34634483"></activity>
+        <activity android:name=".Activity34634483" />
+        <activity android:name=".Activity34962254"></activity>
     </application>
 
 </manifest>
