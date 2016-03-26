@@ -58,7 +58,6 @@ public class Activity34559171 extends AppCompatActivity {
 
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
-
         public ItemViewHolder(View itemView) {
             super(itemView);
         }

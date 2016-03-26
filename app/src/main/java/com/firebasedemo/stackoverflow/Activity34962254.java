@@ -15,6 +15,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * This class is in support of the answer for the question on:
@@ -95,4 +96,5 @@ public class Activity34962254 extends AppCompatActivity {
         menu.setLayoutManager(manager);
         menu.setAdapter(adapter);
     }
+
 }

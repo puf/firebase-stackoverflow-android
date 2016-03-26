@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.firebasedemo.stackoverflow"
-        minSdkVersion 10
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -28,7 +28,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.firebase:firebase-client-android:2.3.1'
+    compile 'com.firebase:firebase-client-android:2.5.0'
     compile 'com.android.support:recyclerview-v7:23.1.0'
-    compile 'com.firebaseui:firebase-ui:0.2.2'
+    compile 'com.firebaseui:firebase-ui:0.3.1'
 }
