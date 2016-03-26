@@ -4,15 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Adapter;
+import android.view.View;import android.widget.Adapter;
 import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-import com.firebase.ui.FirebaseRecyclerViewAdapter;
+import com.firebase.ui.FirebaseRecyclerAdapter;
 
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class Activity34559171 extends AppCompatActivity {
 
         final Firebase ref = new Firebase("https://stackoverflow.firebaseio.com/34559171");
 
-        FirebaseRecyclerViewAdapter<Boolean, ItemViewHolder> adapter = new FirebaseRecyclerViewAdapter<Boolean, ItemViewHolder>(Boolean.class, android.R.layout.two_line_list_item, ItemViewHolder.class, ref.child("index")){
+        FirebaseRecyclerAdapter<Boolean, ItemViewHolder> adapter = new FirebaseRecyclerAdapter<Boolean, ItemViewHolder>(Boolean.class, android.R.layout.two_line_list_item, ItemViewHolder.class, ref.child("index")){
             protected void populateViewHolder(final ItemViewHolder viewHolder, Boolean model, int position) {
                 String key = this.getRef(position).getKey();
                 ref.child("items").child(key).addListenerForSingleValueEvent(new ValueEventListener() {

@@ -12,7 +12,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.firebase.ui.FirebaseRecyclerAdapter;
-import com.firebase.ui.FirebaseRecyclerViewAdapter;
+import com.firebase.ui.FirebaseRecyclerAdapter;
 
 
 /**
