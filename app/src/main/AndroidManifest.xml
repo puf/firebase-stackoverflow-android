@@ -38,7 +38,8 @@
         <activity android:name=".Activity34559171" />
         <activity android:name=".Activity34634483" />
         <activity android:name=".Activity34962254" />
-        <activity android:name=".Activity36235919"></activity>
+        <activity android:name=".Activity36235919" />
+        <activity android:name=".Activity36160819"></activity>
     </application>
 
 </manifest>
