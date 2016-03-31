@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -24,6 +25,11 @@ import java.util.List;
 public class Activity36332909 extends AppCompatActivity {
     public static class Comment {
         public String text;
+
+        @Override
+        public String toString() {
+            return text;
+        }
     }
     public static class Post {
         private String title;
@@ -44,16 +50,14 @@ public class Activity36332909 extends AppCompatActivity {
 
         @Override
         public String toString() {
-            return "title="+title+" date="+date+" comments.length="+(comments!=null?comments.size():0);
+            return "title="+title+" date="+date+" comments="+(comments!=null?comments.toString():"<null>");
         }
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RecyclerView view = new RecyclerView(this);
+        final TextView view = new TextView(this);
         setContentView(view);
-
-        view.setLayoutManager(new LinearLayoutManager(this));
 
         Firebase.setAndroidContext(this);
         Firebase ref = new Firebase("https://stackoverflow.firebaseio.com/36332909");
@@ -61,7 +65,7 @@ public class Activity36332909 extends AppCompatActivity {
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                System.out.println(dataSnapshot.getValue(Post.class));
+                view.append(dataSnapshot.getValue(Post.class).toString()+"\n");
             }
 
             public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
