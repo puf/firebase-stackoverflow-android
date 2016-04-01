@@ -35,13 +35,13 @@
         <activity android:name=".Activity33260450" />
         <activity android:name=".Activity33294232" />
         <activity android:name=".Activity33955548" />
-        <activity android:name=".Activity34559171" />
-        <activity android:name=".Activity34634483" />
-        <activity android:name=".Activity34962254" />
-        <activity android:name=".Activity36235919" />
-        <activity android:name=".Activity36160819" />
-        <activity android:name=".Activity36299197" />
-        <activity android:name=".Activity36332909"></activity>
+        <activity android:name=".Activity34559171" android:label="Coupling FirebaseRecyclerViewAdapter to a Boolean/String Map.Entry"/>
+        <activity android:name=".Activity34634483" android:label="Android, Firebase login takes a bit long and WebSocketException occurred"/>
+        <activity android:name=".Activity34962254" android:label="how to retrieve data to a recycler view from FIREBASE"/>
+        <activity android:name=".Activity36235919" android:label="How to populate RecyclerView with data which has id=xxxx in Firebase using Java?"/>
+        <activity android:name=".Activity36160819" android:label="How to use a FirebaseRecyclerAdapter with a dynamic reference in Android? [duplicate]"/>
+        <activity android:name=".Activity36299197" android:label="Data is not getting populated using FirebaseRecyclerAdapter?" />
+        <activity android:name=".Activity36332909" android:label="How to handle situation when some value return null from Firebase?"></activity>
     </application>
 
 </manifest>

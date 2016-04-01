@@ -53,6 +53,8 @@ public class Activity36332909 extends AppCompatActivity {
             return "title="+title+" date="+date+" comments="+(comments!=null?comments.toString():"<null>");
         }
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
                     activityInfos.add(activityInfo);
                     // Use the class name, since the label may not be set for empty activities
                     String name = activityInfo.name.substring(activityInfo.packageName.length()+1);
+                    String title = activityInfo.loadLabel(getPackageManager()).toString();
+                    if (!title.equals(name) && !title.equals(getString(R.string.app_name))) {
+                        name += " - " + title;
+                    }
                     activityNames.add(name);
                 }
             }
